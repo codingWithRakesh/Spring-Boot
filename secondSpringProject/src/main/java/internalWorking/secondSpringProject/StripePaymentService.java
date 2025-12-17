@@ -3,7 +3,6 @@ package internalWorking.secondSpringProject;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
-import org.springframework.stereotype.Service;
 
 //All Same
 //@Component
