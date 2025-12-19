@@ -22,6 +22,21 @@ public class StudentController {
 
     @GetMapping("/student/{id}")
     public StudentDto getStudentById(@PathVariable Long id){
-        return new StudentDto(4L,"Rakesh","rakesh@gmail.com");
+        return studentService.getById(id);
     }
+
+    @GetMapping("/studentsUsingMapper")
+    public List<StudentDto> getStudentUsingMapper(){
+        return studentService.getAllStudentsUsingMapping();
+    }
+
+    @GetMapping("/studentUsingMapper/{id}")
+    public StudentDto getStudentUsingMapperById(@PathVariable Long id){
+        return studentService.getByIdUsingMapper(id);
+    }
+
+//    @GetMapping("/student/{name}")
+//    public StudentDto getStudentByName(@PathVariable String name){
+//        return studentService.getByName(name);
+//    }
 }
