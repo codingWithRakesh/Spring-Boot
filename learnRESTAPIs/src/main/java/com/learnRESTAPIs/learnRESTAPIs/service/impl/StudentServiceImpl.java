@@ -110,8 +110,8 @@ public class StudentServiceImpl implements StudentService {
         return modelMapper.map(newStudent, StudentDto.class);
     }
 
-//    @Override
-//    public StudentDto getByName(String name) {
-//        Student student = studentRepository.findByName
-//    }
+   @Override
+   public StudentDto getByName(String name) {
+       Student student = studentRepository.findByName
+   }
 }
