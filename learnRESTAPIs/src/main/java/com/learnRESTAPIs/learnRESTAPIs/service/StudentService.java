@@ -20,5 +20,7 @@ public interface StudentService {
     StudentDto updateStudentById(Long id, AddStudentRequestDto addStudentRequestDto);
 
     StudentDto updatePartialStudentById(Long id, Map<String, Object> updateValue);
+
+    List<StudentDto> findByName(String name);
 //    StudentDto getByName(String name);
 }

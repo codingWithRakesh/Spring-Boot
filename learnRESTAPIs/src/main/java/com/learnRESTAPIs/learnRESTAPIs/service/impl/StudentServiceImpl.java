@@ -11,6 +11,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -110,8 +111,16 @@ public class StudentServiceImpl implements StudentService {
         return modelMapper.map(newStudent, StudentDto.class);
     }
 
-   @Override
-   public StudentDto getByName(String name) {
-       Student student = studentRepository.findByName
-   }
+    @Override
+    public List<StudentDto> findByName(String name) {
+        List<Student> students = studentRepository.findByName(name);
+        return students.stream()
+                .map(student -> modelMapper.map(student, StudentDto.class))
+                .toList();
+    }
+
+//   @Override
+//   public StudentDto getByName(String name) {
+//       Student student = studentRepository.findByName()
+//   }
 }

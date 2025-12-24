@@ -60,8 +60,8 @@ public class StudentController {
         return ResponseEntity.status(HttpStatus.OK).body(studentService.updatePartialStudentById(id, updateValue));
     }
 
-//    @GetMapping("/student/{name}")
-//    public StudentDto getStudentByName(@PathVariable String name){
-//        return studentService.getByName(name);
-//    }
+    @GetMapping("/findByName/{name}")
+    public ResponseEntity<List<StudentDto>> getStudentByName(@PathVariable String name){
+        return ResponseEntity.status(HttpStatus.OK).body(studentService.findByName(name));
+    }
 }
